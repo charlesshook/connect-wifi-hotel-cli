@@ -25,7 +25,7 @@ func scan(cmd *cobra.Command, args []string) {
 	output, err := utils.RunCommand("nmcli -t -f ssid,signal,security dev wifi list")
 
 	if err != nil {
-		fmt.Printf("failed to scan WiFi networks: %v", err)
+		fmt.Printf("Failed to scan WiFi networks: %v", err)
 	}
 
 	if output == "" {
@@ -41,6 +41,7 @@ func scan(cmd *cobra.Command, args []string) {
 
 		if len(fields) >= 3 {
 			ssid := fields[0]
+
 			if ssid == "" {
 				ssid = "<hidden>"
 			}
@@ -52,7 +53,7 @@ func scan(cmd *cobra.Command, args []string) {
 				security = "<not listed>"
 			}
 
-			fmt.Printf("%s\t\t%s\t%s\n", ssid, signal, security)
+			fmt.Printf("%s|%s|%s\n", ssid, signal, security)
 		}
 	}
 }

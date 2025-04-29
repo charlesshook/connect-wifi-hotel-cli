@@ -6,7 +6,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "connect-hotel-wifi",
 	Short: "Helpful tool to connect to hotel wifi networks.",
